@@ -71,9 +71,9 @@ const albumSongs = {
   ],
   'SOS': [
     { title: 'Blind', artist: 'SZA', audio: 'music/sos/Blind.mp3' },
-    { title: 'Gone Girl', artist: 'SZA', audio: 'music/sos/Gone Girl.mp3' },
-    { title: 'Good Days', artist: 'SZA', audio: 'music/sos/Good Days.mp3' },
-    { title: 'Love Language', artist: 'SZA', audio: 'music/sos/Love Language.mp3' },
+    { title: 'Gone Girl', artist: 'SZA', audio: 'music/sos/GoneGirl.mp3' },
+    { title: 'Good Days', artist: 'SZA', audio: 'music/sos/GoodDays.mp3' },
+    { title: 'Love Language', artist: 'SZA', audio: 'music/sos/LoveLanguage.mp3' },
     { title: 'Snooze', artist: 'SZA', audio: 'music/sos/Snooze.mp3' }
   ]
 };
