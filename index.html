@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">
+          <img src="spot.jpg" alt="Spotify logo" />
+        </div>
+        <div>
+          <span class="brand-name">Rohaina</span>
+        </div>
+      </div>
+      <nav class="nav-list">
+        <button class="nav-item active" data-target="home"><span class="nav-icon">🏠</span>Home</button>
+        <button class="nav-item" data-target="search"><span class="nav-icon">🔎</span>Search</button>
+        <button class="nav-item" data-target="recentlyPlayed"><span class="nav-icon">🕒</span>Recently Played</button>
+      </nav>
+      <div class="sidebar-footer"></div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="top-bar">
+        <div class="welcome">
+          <p id="greetingText">Good evening</p>
+          <h1>Discover your favorite music</h1>
+        </div>
+      </header>
+
+      <section id="homeContent" class="content-panel active">
+        <section class="section cards-grid"></section>
+
+        <section class="section section-playlists">
+          <div class="section-heading">
+            <h2>Albums</h2>
+          </div>
+          <div class="playlist-grid">
+            <article class="playlist-card" data-album="Arirang">
+              <img class="playlist-art" src="bts.png" alt="Arirang" />
+              <div><h3>Arirang</h3><p>5 songs</p></div>
+            </article>
+
+            <article class="playlist-card" data-album="Lover">
+              <img class="playlist-art" src="Taylor.jpg" alt="Lover" />
+              <div><h3>Lover</h3><p>5 songs</p></div>
+            </article>
+
+            <article class="playlist-card" data-album="MyWorld">
+              <img class="playlist-art" src="Justin.png" alt="My World" />
+              <div><h3>My World</h3><p>5 songs</p></div>
+            </article>
+
+            <article class="playlist-card" data-album="Soft">
+              <img class="playlist-art" src="lany.jpg" alt="Soft" />
+              <div><h3>Soft</h3><p>5 songs</p></div>
+            </article>
+
+            <article class="playlist-card" data-album="SOS">
+              <img class="playlist-art" src="SZA.jpg" alt="SOS" />
+              <div><h3>SOS</h3><p>5 songs</p></div>
+            </article>
+          </div>
+        </section>
+      </section>
+
+      <section id="searchContent" class="content-panel">
+        <div class="search-header">
+          <h2>Search</h2>
+          <div class="search-box">
+            <input id="searchInput" type="search" placeholder="Search for songs, albums, or artists" />
+          </div>
+        </div>
+        <div class="search-results">
+          <div class="search-status">Search for music by title, artist, or album.</div>
+          <div class="results-list"></div>
+        </div>
+      </section>
+
+      <section id="recentlyPlayed" class="content-panel">
+        <div class="section-heading">
+          <h2>Recently Played</h2>
+          <button class="see-all">Play</button>
+        </div>
+        <div class="liked-grid" id="recentList"></div>
+      </section>
+
+      <section id="albumView" class="content-panel">
+        <div class="section-heading">
+          <button class="back-button" onclick="showSection('home')">← Back</button>
+          <h2 id="albumTitle">Album</h2>
+        </div>
+        <div id="albumContent" class="album-songs-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="player-bar">
+    <div class="player-track-info" id="playerTrackInfo">
+      <div class="track-info">
+        <strong id="trackTitle">&#8212;</strong>
+        <span id="trackArtist">Select a song to play</span>
+      </div>
+    </div>
+    <div class="player-center">
+      <div class="progress-container" id="progressContainer">
+        <span id="currentTime">0:00</span>
+        <input type="range" id="progressBar" value="0" min="0" max="100" />
+        <span id="duration">0:00</span>
+      </div>
+      <div class="player-controls" id="playerControls">
+        <button class="control-btn" id="shuffleBtn" title="Shuffle">&#x1F500;</button>
+        <button class="control-btn" id="prevBtn">&#x23EE;</button>
+        <button class="control-btn play-btn" id="playToggle">&#x25B6;</button>
+        <button class="control-btn" id="nextBtn">&#x23ED;</button>
+        <button class="control-btn" id="repeatBtn" title="Repeat">&#x1F501;</button>
+      </div>
+    </div>
+    <div class="player-right-spacer"></div>
+  </footer>
+
+  <audio id="audioPlayer" preload="none"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
